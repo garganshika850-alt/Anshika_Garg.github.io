@@ -1,189 +1,255 @@
-<!-- Anshika Garg Full Portfolio Website -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Anshika Garg Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<style>
- body {
-   margin: 0;
-   font-family: "Poppins", sans-serif;
-   background: #f7f7f7;
-   color: #222;
- }
- header {
-   background: linear-gradient(135deg, #dadada, #ffffff);
-   padding: 60px;
-   text-align: center;
-   border-bottom: 4px solid #c5c5c5;
- }
- header h1 {
-   font-size: 50px;
-   margin: 0;
-   font-weight: 700;
- }
- header h2 {
-   font-size: 22px;
-   margin-top: 10px;
-   font-weight: 400;
- }
- section {
-   padding: 60px 100px;
- }
- .section-box {
-   background: #fff;
-   padding: 40px;
-   margin-bottom: 40px;
-   border-radius: 14px;
-   border: 1px solid #e0e0e0;
-   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
- }
- h3 {
-   margin-top: 0;
-   font-size: 28px;
-   border-left: 6px solid #9a9a9a;
-   padding-left: 15px;
- }
- .skills-grid, .soft-grid, .competency-grid, .project-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   gap: 20px;
- }
- .skill-item, .soft-item, .competency-item, .project-card {
-   background: #f2f2f2;
-   padding: 20px;
-   border-radius: 12px;
-   font-size: 16px;
-   border: 1px solid #dcdcdc;
- }
- .project-card img {
-   width: 100%;
-   border-radius: 10px;
- }
- .contact-box {
-   background: #efefef;
-   padding: 40px;
-   border-radius: 12px;
- }
- footer {
-   text-align: center;
-   padding: 20px;
-   background: #cfcfcf;
- }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANSHIKA GARG | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ===== GLOBAL STYLING ===== */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+
+    section { padding: 70px 20px; max-width: 1100px; margin: auto; }
+
+    /* ===== NAVIGATION ===== */
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+      list-style: none;
+      margin: 0;
+      background-color: #111;
+      border-bottom: 1px solid #333;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover { color: #ffbb00; }
+
+    /* ===== HERO ===== */
+    #hero {
+      text-align: center;
+      padding: 120px 20px;
+      background: linear-gradient(135deg, #111, #222);
+    }
+
+    #hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    #hero p { font-size: 1.3rem; opacity: 0.9; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 35px;
+      background-color: #ffbb00;
+      color: #000;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover { background-color: #ffdd55; }
+
+    /* ===== SECTION BOXES (NEW) ===== */
+    .section-box {
+      background-color: #111;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+      margin-top: 30px;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-container {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .profile-img {
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffbb00;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-box {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 4px solid #ffbb00;
+    }
+
+    /* ===== PROJECTS ===== */
+    .project-card {
+      background-color: #111;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 4px solid #ffbb00;
+      margin-bottom: 20px;
+    }
+
+    /* ===== CONTACT ===== */
+    .social-media a {
+      font-size: 1.7rem;
+      margin-right: 15px;
+      color: #ffbb00;
+      transition: 0.3s;
+    }
+
+    .social-media a:hover { color: #fff; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      margin-top: 40px;
+      border-top: 1px solid #333;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Hi, I am <strong>Anshika Garg</strong></h1>
-  <h2>A passionate learner, creative thinker, and future-ready professional!</h2>
-</header>
-
-<section>
-  <div class="section-box">
-    <h3>About Me</h3>
-    <p>
-      I am Anshika Garg, a forward thinker who believes in continuous learning, innovation, and exploring possibilities beyond the obvious. With a curiosity-driven mindset, I constantly seek opportunities that challenge me, help me grow, and allow me to create meaningful impact. I enjoy taking initiative, solving problems, and pushing myself to become the best version of myself every single day.
-    </p>
-  </div>
-
-  <div class="section-box">
-    <h3>Education</h3>
-    <p><strong>Class 12 (CBSE)</strong> – Pursuing<br>
-       <strong>Class 10 (CBSE)</strong> – Completed</p>
-  </div>
-
-  <div class="section-box">
-    <h3>Technical Skills</h3>
-    <div class="skills-grid">
-      <div class="skill-item">HTML</div>
-      <div class="skill-item">CSS</div>
-      <div class="skill-item">JavaScript</div>
-      <div class="skill-item">Python</div>
-      <div class="skill-item">Canva</div>
-      <div class="skill-item">Figma Basics</div>
-    </div>
-  </div>
-
-  <div class="section-box">
-    <h3>Soft Skills</h3>
-    <div class="soft-grid">
-      <div class="soft-item">Leadership</div>
-      <div class="soft-item">Communication</div>
-      <div class="soft-item">Teamwork</div>
-      <div class="soft-item">Creativity</div>
-      <div class="soft-item">Time Management</div>
-      <div class="soft-item">Problem Solving</div>
-    </div>
-  </div>
-
-  <div class="section-box">
-    <h3>Skills & Competencies</h3>
-    <div class="competency-grid">
-      <div class="competency-item">Active Listener</div>
-      <div class="competency-item">Adaptability</div>
-      <div class="competency-item">Growth Mindset</div>
-      <div class="competency-item">Strategic Thinking</div>
-    </div>
-  </div>
-
-  <div class="section-box">
-    <h3>Projects</h3>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="project1.png" alt="Project 1" />
-        <p><strong>Project 1:</strong> Portfolio Website</p>
-      </div>
-      <div class="project-card">
-        <img src="project2.png" alt="Project 2" />
-        <p><strong>Project 2:</strong> Canva Designs</p>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="Project 3" />
-        <p><strong>Project 3:</strong> Web UI Mockups</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-box">
-    <h3>Learning Path</h3>
-    <p>HTML → CSS → JS → Projects → Portfolio → Web Hosting</p>
-  </div>
-
-  <div class="section-box">
-    <h3>Syllabus</h3>
+  <!-- NAVIGATION -->
+  <nav aria-label="Main Navigation">
     <ul>
-      <li>Web Basics</li>
-      <li>HTML Structure</li>
-      <li>CSS Styling</li>
-      <li>JavaScript Logic</li>
-      <li>Project Building</li>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#competencies">Competencies</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#pese-lab">PESE Lab</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-  </div>
+  </nav>
 
-  <div class="section-box">
-    <h3>Assignments</h3>
-    <ul>
-      <li>Assignment 1 – Create Webpage</li>
-      <li>Assignment 2 – Style a Portfolio</li>
-      <li>Assignment 3 – Build a Multi-section Website</li>
-    </ul>
-  </div>
+  <!-- HERO -->
+  <header id="hero">
+    <h1>Hi, I'm <span style="color:#ffbb00;">Anshika Garg</span></h1>
+    <p>Web Developer | AI & ML Enthusiast | Forward Thinker</p>
+    <a href="#contact" class="btn">Contact Me</a>
+  </header>
 
-  <div class="section-box contact-box">
-    <h3>Contact Me</h3>
-    <p>Email: anshika@example.com</p>
-    <p>Phone: +91 0000000000</p>
-  </div>
-</section>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="section-box">
+      <div class="about-container">
+        <img src="profile.jpg" class="profile-img" alt="Profile">
+        <p>
+          I'm <strong>Anshika Garg</strong>, a passionate and disciplined learner who loves solving problems through creativity and logic. I am a forward‑thinking developer who believes in building meaningful solutions with clean design, strong logic, and purpose-driven innovation.<br><br>
+          I am driven by curiosity and constantly explore new tools, technologies, and ways to grow not only as a developer but also as a communicator and individual.
+        </p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © 2025 Anshika Garg | All Rights Reserved
-</footer>
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="section-box">
+      <ul>
+        <li><strong>B.Tech in Computer Science</strong> — Graphic Era Hill University (2025-2029)</li>
+        <li><strong>12th Grade</strong> — Kendriya Vidyalaya (CBSE)</li>
+        <li><strong>10th Grade</strong> — Kendriya Vidyalaya (CBSE)</li>
+      </ul>
+    </div>
+  </section>
 
-</body>
-</html>
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="section-box skills-grid">
+      <div class="skill-box"><h3>Python</h3><p>Advanced</p></div>
+      <div class="skill-box"><h3>Machine Learning</h3><p>Intermediate</p></div>
+      <div class="skill-box"><h3>HTML/CSS/JS</h3><p>Advanced</p></div>
+      <div class="skill-box"><h3>Data Analysis</h3><p>Intermediate</p></div>
+      <div class="skill-box"><h3>SQL</h3><p>Intermediate</p></div>
+      <div class="skill-box"><h3>Git & GitHub</h3><p>Advanced</p></div>
+    </div>
+  </section>
+
+  <!-- COMPETENCIES -->
+  <section id="competencies">
+    <h2>Skills & Competencies</h2>
+    <div class="section-box">
+      <ul>
+        <li>Leadership</li>
+        <li>Teamwork</li>
+        <li>Time Management</li>
+        <li>Problem Solving</li>
+        <li>Communication Skills</li>
+        <li>Adaptability</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="section-box">
+      <div class="project-card">
+        <h3>1. Portfolio Website</h3>
+        <p>Designed and developed a fully responsive personal portfolio website showcasing my work, skills, and achievements.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>2. Machine Learning Model</h3>
+        <p>Created a classification model using Python libraries such as Pandas, NumPy, Matplotlib, and Scikit-learn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PESE LAB -->
+  <section id="pese-lab">
+    <h2>PESE Lab Learnings</h2>
+    <div class="section-box">
+      <ul>
+        <li><strong>Day 1:</strong> Introductions, confidence activities, communication basics.</li>
+        <li><strong>Day 2:</strong> Self-introduction format, portfolio instructions.</li>
+        <li><strong>Day 3:</strong> Profiling sheet questions and self-analysis.</li>
+        <li><strong>Day 4:</strong> Presentation skills, objectives, debate session.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="section-box">
+      <p><strong>Email:</strong> garganshika850@gmail.com</p>
+      <p><strong>Phone:</strong> +91 9528705118</p>
+      <p><strong>Address:</strong> Sitarganj, Uttarakhand, India</p>
+
+      <div class="social-media">
+        <a href="https://www.linkedin.com/in/anshika-garg-7036732ba" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://Anshika
