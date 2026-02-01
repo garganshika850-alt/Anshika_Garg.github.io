@@ -6,27 +6,27 @@
   <title>ANSHIKA GARG | Portfolio</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* ===== GLOBAL STYLING ===== */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
       background-color: #000;
       color: #fff;
+      scroll-behavior: smooth;
     }
 
-    h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
-    a { text-decoration: none; }
+    h1,h2,h3 { font-family: 'Montserrat', sans-serif; }
 
     section { padding: 70px 20px; max-width: 1100px; margin: auto; }
 
-    /* ===== NAVIGATION ===== */
+    a { text-decoration: none; }
+
     nav ul {
       display: flex;
       justify-content: center;
@@ -36,20 +36,14 @@
       margin: 0;
       background-color: #111;
       border-bottom: 1px solid #333;
-      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
+    nav ul li a { color: #fff; font-weight: 500; font-size: 1.1rem; transition: 0.3s; }
     nav ul li a:hover { color: #ffbb00; }
 
-    /* ===== HERO ===== */
     #hero {
       text-align: center;
       padding: 120px 20px;
@@ -58,6 +52,7 @@
 
     #hero h1 { font-size: 3rem; margin-bottom: 10px; }
     #hero p { font-size: 1.3rem; opacity: 0.9; }
+
     .btn {
       display: inline-block;
       margin-top: 20px;
@@ -71,36 +66,27 @@
 
     .btn:hover { background-color: #ffdd55; }
 
-    /* ===== SECTION BOXES ===== */
     .section-box {
       background-color: #111;
       padding: 40px;
       border-radius: 15px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 12px rgba(255,255,255,0.08);
       margin-top: 30px;
+      transition: transform 0.3s;
     }
 
-    /* ===== ABOUT ===== */
+    .section-box:hover { transform: translateY(-5px); }
+
     .about-container {
       display: flex; gap: 40px; flex-wrap: wrap; align-items: center;
     }
 
-    .profile-img {
-      width: 230px;
-      height: 230px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #ffbb00;
-    }
+    .profile-img { width: 230px; height: 230px; border-radius: 50%; object-fit: cover; border: 4px solid #ffbb00; }
 
-    /* ===== EDUCATION ===== */
-    #education ul { list-style: none; padding: 0; }
-    #education ul li { margin-bottom: 15px; }
-
-    /* ===== SKILLS ===== */
+    /* SKILLS */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
       gap: 25px;
     }
 
@@ -109,62 +95,46 @@
       padding: 20px;
       border-radius: 12px;
       border-left: 4px solid #ffbb00;
+      transition: transform 0.3s;
     }
 
-    .skill-box h3 { margin: 0 0 10px 0; }
-    .skill-bar {
-      height: 12px;
-      background-color: #333;
-      border-radius: 8px;
-      overflow: hidden;
-    }
+    .skill-box:hover { transform: scale(1.05); }
 
-    .skill-bar span {
-      display: block;
+    .skill-box h3 { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; margin-bottom: 10px; }
+    .progress { background-color: #333; height: 15px; border-radius: 10px; overflow: hidden; margin-bottom: 8px; }
+    .progress-bar {
       height: 100%;
       background-color: #ffbb00;
+      width: 0%;
       text-align: right;
-      padding-right: 8px;
-      line-height: 12px;
+      padding-right: 5px;
+      line-height: 15px;
       color: #000;
-      font-size: 0.8rem;
-      border-radius: 8px;
+      font-weight: bold;
     }
 
-    /* ===== SOFT SKILLS ===== */
-    .competencies ul { list-style: none; padding: 0; }
-    .competencies ul li { margin-bottom: 12px; }
-
-    /* ===== PROJECTS ===== */
-    .project-card {
+    /* CERTIFICATES */
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 20px;
+    }
+    .certificate-card {
       background-color: #111;
-      padding: 25px;
+      padding: 20px;
       border-radius: 12px;
       border-left: 4px solid #ffbb00;
-      margin-bottom: 20px;
+      text-align: center;
+      transition: transform 0.3s;
     }
-
-    /* ===== ASSIGNMENTS ===== */
-    .assignment-upload {
-      margin-top: 20px;
-    }
-    .assignment-upload input[type="file"] {
-      display: block;
-      margin-bottom: 10px;
-      color: #ffbb00;
-    }
-    .assignment-upload button {
-      padding: 10px 20px;
-      background-color: #ffbb00;
-      border: none;
-      color: #000;
+    .certificate-card img {
+      width: 100%;
       border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
+      margin-bottom: 10px;
     }
-    .assignment-upload button:hover { background-color: #ffdd55; }
+    .certificate-card:hover { transform: scale(1.05); }
 
-    /* ===== CONTACT ===== */
+    /* CONTACT */
     .social-media a {
       font-size: 1.7rem;
       margin-right: 15px;
@@ -173,172 +143,166 @@
     }
     .social-media a:hover { color: #fff; }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #111;
-      margin-top: 40px;
-      border-top: 1px solid #333;
+    input[type="file"], input[type="submit"] {
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: none;
+      font-weight: bold;
     }
+
+    input[type="submit"] { background-color: #ffbb00; color:#000; cursor:pointer; transition:0.3s; }
+    input[type="submit"]:hover { background-color:#ffdd55; }
+
+    ul#uploaded-list li { margin-top: 8px; }
+
+    footer { text-align:center; padding:20px; background-color:#111; margin-top:40px; border-top:1px solid #333; }
 
     @media (max-width:768px){
       .about-container{ flex-direction: column; text-align: center; }
       .profile-img{ margin-bottom:20px; }
-      nav ul{ gap: 20px; }
     }
+
+    #backToTop {
+      position: fixed; bottom: 20px; right: 20px;
+      background-color: #ffbb00; color:#000; padding:12px 16px;
+      border-radius: 50%; font-size:1.5rem; cursor:pointer; display:none; z-index:100; transition:0.3s;
+    }
+    #backToTop:hover { background-color:#ffdd55; }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
+<!-- NAVIGATION -->
+<nav aria-label="Main Navigation">
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#competencies">Competencies</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#pese-lab">PESE Lab</a></li>
+    <li><a href="#assignments">Assignments</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
+  <h1>Hi, I'm <span style="color:#ffbb00;">Anshika Garg</span></h1>
+  <p>Web Developer | AI & ML Enthusiast | Forward Thinker</p>
+  <a href="#contact" class="btn">Contact Me</a>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="section-box about-container">
+    <img src="profile.jpg" class="profile-img" alt="Anshika Garg">
+    <p>
+      I'm <strong>Anshika Garg</strong>, a passionate and disciplined learner who loves solving problems creatively. I am a forward‑thinking developer building meaningful solutions with clean design, strong logic, and purpose-driven innovation. I’m constantly exploring new technologies and enhancing my skills.
+    </p>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="section-box">
     <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Technical Skills</a></li>
-      <li><a href="#competencies">Soft Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#assignments">Assignments</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><strong>B.Tech in Computer Science</strong> — Graphic Era Hill University (2025-2029)</li>
+      <li><strong>12th Grade</strong> — Bhartiyam International School (CBSE)</li>
+      <li><strong>10th Grade</strong> — Shelley School (CBSE)</li>
     </ul>
-  </nav>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <header id="hero">
-    <h1>Hi, I'm <span style="color:#ffbb00;">Anshika Garg</span></h1>
-    <p>Web Developer | AI & ML Enthusiast | Forward Thinker</p>
-    <a href="#contact" class="btn">Contact Me</a>
-  </header>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="section-box">
-      <div class="about-container">
-        <img src="profile.jpg" alt="Profile" class="profile-img">
-        <p>
-          I'm <strong>Anshika Garg</strong>, a passionate and disciplined learner who loves solving problems through creativity and logic. 
-          I enjoy building meaningful solutions with clean design and strong logic.<br><br>
-          I completed my 10th from <strong>Shelley School</strong> and 12th from <strong>Bhartiyam International School</strong> (both CBSE). 
-          Currently, I am pursuing <strong>B.Tech in Computer Science</strong> from Graphic Era Hill University.
-        </p>
-      </div>
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="section-box skills-grid">
+    <div class="skill-box">
+      <h3><i class="fab fa-python"></i> Python</h3>
+      <div class="progress"><div class="progress-bar" data-percent="90%">0%</div></div>
+      <p>Advanced</p>
     </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <h2>Education</h2>
-    <div class="section-box">
-      <ul>
-        <li><strong>B.Tech in Computer Science</strong> — Graphic Era Hill University (2025-2029)</li>
-        <li><strong>12th Grade</strong> — Bhartiyam International School (CBSE)</li>
-        <li><strong>10th Grade</strong> — Shelley School (CBSE)</li>
-      </ul>
+    <div class="skill-box">
+      <h3><i class="fas fa-robot"></i> Machine Learning</h3>
+      <div class="progress"><div class="progress-bar" data-percent="85%">0%</div></div>
+      <p>Intermediate</p>
     </div>
-  </section>
-
-  <!-- TECHNICAL SKILLS -->
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="section-box skills-grid">
-      <div class="skill-box">
-        <h3>Python</h3>
-        <div class="skill-bar"><span style="width: 90%;">90%</span></div>
-      </div>
-      <div class="skill-box">
-        <h3>Machine Learning</h3>
-        <div class="skill-bar"><span style="width: 75%;">75%</span></div>
-      </div>
-      <div class="skill-box">
-        <h3>HTML/CSS/JS</h3>
-        <div class="skill-bar"><span style="width: 85%;">85%</span></div>
-      </div>
-      <div class="skill-box">
-        <h3>Data Analysis</h3>
-        <div class="skill-bar"><span style="width: 70%;">70%</span></div>
-      </div>
-      <div class="skill-box">
-        <h3>SQL</h3>
-        <div class="skill-bar"><span style="width: 75%;">75%</span></div>
-      </div>
-      <div class="skill-box">
-        <h3>Git & GitHub</h3>
-        <div class="skill-bar"><span style="width: 80%;">80%</span></div>
-      </div>
+    <div class="skill-box">
+      <h3><i class="fas fa-code"></i> Web Development</h3>
+      <div class="progress"><div class="progress-bar" data-percent="95%">0%</div></div>
+      <p>Advanced</p>
     </div>
-  </section>
-
-  <!-- SOFT SKILLS -->
-  <section id="competencies">
-    <h2>Soft Skills & Competencies</h2>
-    <div class="section-box competencies">
-      <ul>
-        <li>Leadership</li>
-        <li>Teamwork</li>
-        <li>Time Management</li>
-        <li>Problem Solving</li>
-        <li>Communication Skills</li>
-        <li>Adaptability</li>
-        <li>Creativity</li>
-      </ul>
+    <div class="skill-box">
+      <h3><i class="fas fa-chart-line"></i> Data Analysis</h3>
+      <div class="progress"><div class="progress-bar" data-percent="80%">0%</div></div>
+      <p>Intermediate</p>
     </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="section-box">
-      <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>Designed and developed a fully responsive personal portfolio website showcasing my work, skills, and achievements.</p>
-      </div>
-      <div class="project-card">
-        <h3>Machine Learning Model</h3>
-        <p>Created a classification model using Python libraries such as Pandas, NumPy, Matplotlib, and Scikit-learn.</p>
-      </div>
+    <div class="skill-box">
+      <h3><i class="fas fa-database"></i> SQL</h3>
+      <div class="progress"><div class="progress-bar" data-percent="75%">0%</div></div>
+      <p>Intermediate</p>
     </div>
-  </section>
-
-  <!-- ASSIGNMENTS -->
-  <section id="assignments">
-    <h2>Assignments / Upload PDFs</h2>
-    <div class="section-box">
-      <p>Click below to view my uploaded assignments:</p>
-      <ul>
-        <li><a href="YOUR_PDF_LINK_HERE" target="_blank" style="color:#ffbb00;">Profiling Sheet PDF</a></li>
-        <li><a href="YOUR_PDF_LINK_HERE" target="_blank" style="color:#ffbb00;">PESE Lab Summary PDF</a></li>
-      </ul>
-
-      <div class="assignment-upload">
-        <p>Upload your assignment (PDF):</p>
-        <input type="file" accept="application/pdf">
-        <button>Upload</button>
-      </div>
+    <div class="skill-box">
+      <h3><i class="fab fa-github"></i> Git & GitHub</h3>
+      <div class="progress"><div class="progress-bar" data-percent="90%">0%</div></div>
+      <p>Advanced</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="section-box">
-      <p><strong>Email:</strong> <a href="mailto:garganshika850@gmail.com" style="color:#ffbb00;">garganshika850@gmail.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+919528705118" style="color:#ffbb00;">+91 9528705118</a></p>
-      <p><strong>Address:</strong> Sitarganj, Uttarakhand, India</p>
-
-      <h3>Connect with me:</h3>
-      <div class="social-media">
-        <a href="https://www.linkedin.com/in/anshika-garg-7036732ba" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://Anshika_Garg.github.io" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      </div>
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <h2>Certificates</h2>
+  <div class="section-box certificates-grid">
+    <div class="certificate-card">
+      <img src="certificate1.jpg" alt="Certificate 1">
+      <p>Python Programming Certificate</p>
     </div>
-  </section>
+    <div class="certificate-card">
+      <img src="certificate2.jpg" alt="Certificate 2">
+      <p>Machine Learning Certificate</p>
+    </div>
+    <div class="certificate-card">
+      <img src="certificate3.jpg" alt="Certificate 3">
+      <p>Web Development Certificate</p>
+    </div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 Anshika Garg. All Rights Reserved.</p>
-  </footer>
+<!-- Add Competencies, Projects, PESE Lab, Assignments, Contact here (can reuse your previous code) -->
+
+<!-- Scripts -->
+<script>
+  // Skills Progress Bar Animation
+  const progressBars = document.querySelectorAll('.progress-bar');
+  progressBars.forEach(bar => {
+    const percent = bar.getAttribute('data-percent');
+    let width = 0;
+    let interval = setInterval(() => {
+      if(width >= parseInt(percent)){
+        clearInterval(interval);
+      } else {
+        width++;
+        bar.style.width = width + '%';
+        bar.textContent = width + '%';
+      }
+    }, 15);
+  });
+
+  // Back to Top Button
+  const backToTop = document.createElement('div');
+  backToTop.id = 'backToTop';
+  backToTop.innerHTML = '<i class="fas fa-chevron-up"></i>';
+  document.body.appendChild(backToTop);
+  backToTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+  window.addEventListener('scroll', ()=> { backToTop.style.display = (window.scrollY>300)?'block':'none'; });
+</script>
 
 </body>
 </html>
