@@ -134,15 +134,7 @@
     }
     .certificate-card:hover { transform: scale(1.05); }
 
-    /* CONTACT */
-    .social-media a {
-      font-size: 1.7rem;
-      margin-right: 15px;
-      color: #ffbb00;
-      transition: 0.3s;
-    }
-    .social-media a:hover { color: #fff; }
-
+    /* ASSIGNMENTS */
     input[type="file"], input[type="submit"] {
       padding: 10px;
       margin-top: 10px;
@@ -155,6 +147,15 @@
     input[type="submit"]:hover { background-color:#ffdd55; }
 
     ul#uploaded-list li { margin-top: 8px; }
+
+    /* CONTACT */
+    .social-media a {
+      font-size: 1.7rem;
+      margin-right: 15px;
+      color: #ffbb00;
+      transition: 0.3s;
+    }
+    .social-media a:hover { color: #fff; }
 
     footer { text-align:center; padding:20px; background-color:#111; margin-top:40px; border-top:1px solid #333; }
 
@@ -212,7 +213,7 @@
   <h2>Education</h2>
   <div class="section-box">
     <ul>
-      <li><strong>B.Tech in Computer Science</strong> — Graphic Era Hill University (2025-2029)</li>
+      <li><strong>B.Tech in Computer Science</strong> — Graphic Era Hill University (2025-2028)</li>
       <li><strong>12th Grade</strong> — Bhartiyam International School (CBSE)</li>
       <li><strong>10th Grade</strong> — Shelley School (CBSE)</li>
     </ul>
@@ -275,9 +276,41 @@
   </div>
 </section>
 
-<!-- Add Competencies, Projects, PESE Lab, Assignments, Contact here (can reuse your previous code) -->
+<!-- ASSIGNMENTS -->
+<section id="assignments">
+  <h2>Assignments</h2>
+  <div class="section-box">
+    <p>You can upload your assignment PDF here:</p>
+    <form id="assignment-form" enctype="multipart/form-data">
+      <input type="file" name="assignment" accept=".pdf" required>
+      <input type="submit" value="Upload PDF">
+    </form>
+    <h3 style="margin-top:20px;">Uploaded Assignments</h3>
+    <ul id="uploaded-list"></ul>
+  </div>
+</section>
 
-<!-- Scripts -->
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="section-box">
+    <p><strong>Email:</strong> garganshika850@gmail.com</p>
+    <p><strong>Phone:</strong> +91 9528705118</p>
+    <p><strong>Address:</strong> Sitarganj, Uttarakhand, India</p>
+
+    <div class="social-media">
+      <a href="https://www.linkedin.com/in/anshika-garg-7036732ba" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://Anshika_Garg.github.io" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Anshika Garg. All Rights Reserved.</p>
+</footer>
+
+<div id="backToTop"><i class="fas fa-chevron-up"></i></div>
+
 <script>
   // Skills Progress Bar Animation
   const progressBars = document.querySelectorAll('.progress-bar');
@@ -296,13 +329,24 @@
   });
 
   // Back to Top Button
-  const backToTop = document.createElement('div');
-  backToTop.id = 'backToTop';
-  backToTop.innerHTML = '<i class="fas fa-chevron-up"></i>';
-  document.body.appendChild(backToTop);
+  const backToTop = document.getElementById('backToTop');
   backToTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
   window.addEventListener('scroll', ()=> { backToTop.style.display = (window.scrollY>300)?'block':'none'; });
-</script>
 
+  // Assignment Upload Preview
+  const form = document.getElementById('assignment-form');
+  const uploadedList = document.getElementById('uploaded-list');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const fileInput = form.assignment;
+    if(fileInput.files.length > 0){
+      const li = document.createElement('li');
+      li.textContent = fileInput.files[0].name;
+      uploadedList.appendChild(li);
+      fileInput.value = '';
+      alert('Assignment uploaded (preview only).');
+    }
+  });
+</script>
 </body>
 </html>
