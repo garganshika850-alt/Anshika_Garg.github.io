@@ -1,3 +1,4 @@
+<!-- Revamped Portfolio HTML (Black Theme + Added Sections + More Elements) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,23 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ANSHIKA GARG | Portfolio</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
-
   <style>
-    /* Basic Reset & Font */
     body {
       margin: 0;
       padding: 0;
+      background-color: #000;
+      color: #fff;
       font-family: 'Roboto', sans-serif;
-      color: #000; /* Black text throughout */
-      background-color: #fff; /* White background */
     }
 
     nav ul {
@@ -29,7 +23,7 @@
       justify-content: center;
       list-style: none;
       padding: 15px 0;
-      background-color: #f5f5f5;
+      background-color: #111;
       margin: 0;
     }
 
@@ -39,295 +33,226 @@
 
     nav ul li a {
       text-decoration: none;
-      color: #000; /* Black links */
+      color: #fff;
       font-weight: 500;
     }
 
     header#hero {
       text-align: center;
       padding: 80px 20px;
-      background-color: #f9f9f9;
+      background-color: #121212;
     }
 
     header#hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2.8rem;
+      font-weight: 700;
     }
 
     header#hero p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+      margin-top: 10px;
+      font-size: 1.3rem;
+      opacity: 0.8;
     }
 
     .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background-color: #000;
-      color: #fff;
-      text-decoration: none;
+      padding: 12px 30px;
+      background-color: #fff;
+      color: #000;
       border-radius: 8px;
+      text-decoration: none;
+      margin-top: 20px;
+      display: inline-block;
+      font-weight: 600;
       transition: 0.3s;
     }
 
-    .btn:hover {
-      background-color: #333;
-    }
-
     section {
-      padding: 60px 20px;
-      max-width: 1000px;
+      padding: 70px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
     section h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
       text-align: center;
-      color: #000;
+      font-size: 2.4rem;
+      margin-bottom: 40px;
+      color: #fff;
     }
 
-    /* About Section */
+    /* ABOUT */
     .about-content {
       display: flex;
+      gap: 40px;
       flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
       justify-content: center;
+      align-items: center;
     }
 
-    .about-content img.profile-img {
-      width: 200px; /* Smaller size */
-      height: 200px;
+    .about-content img {
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       object-fit: cover;
+      border: 3px solid #fff;
     }
 
     .about-content p {
-      flex: 1;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #000;
-    }
-
-    /* Skills Section */
-    .skills-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
       max-width: 600px;
-      margin: auto;
+      line-height: 1.7;
+      font-size: 1.1rem;
     }
 
-    .skill span {
-      font-weight: 500;
-      margin-bottom: 5px;
-      display: block;
-      color: #000;
+    /* NEW SECTION: CURRENTLY EXPLORING */
+    .exploring {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .explore-card {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 12px;
+      width: 420px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    .explore-card h3 {
+      margin: 0 0 10px;
     }
 
     .progress {
-      background-color: #e0e0e0;
-      border-radius: 8px;
+      background-color: #333;
+      height: 10px;
+      border-radius: 20px;
       overflow: hidden;
-      height: 15px;
     }
 
     .progress-bar {
       height: 100%;
-      background-color: #000;
-    }
-
-    /* Assignment Form */
-    form input[type="file"],
-    form input[type="submit"] {
-      padding: 10px;
-      font-size: 1rem;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    form input[type="submit"] {
-      background-color: #000;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    form input[type="submit"]:hover {
-      background-color: #333;
-    }
-
-    /* PESE Lab Section */
-    #pese-lab {
-      background-color: #f5f5f5;
-      color: #000;
-      padding: 50px 20px;
-    }
-
-    #pese-lab article {
       background-color: #fff;
-      padding: 20px;
+      border-radius: 20px;
+    }
+
+    /* SOFT SKILLS */
+    .soft-skills {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .skill-box {
+      background-color: #111;
+      padding: 25px;
+      width: 300px;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      flex: 1;
-      min-width: 250px;
+      text-align: center;
     }
 
-    #pese-lab a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 12px 20px;
-      background-color: #000;
-      color: #fff;
-      border-radius: 10px;
-      text-decoration: none;
+    /* EDUCATION */
+    .edu-card {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 20px;
     }
 
-    /* Contact Section */
-    .contact-info p a {
-      color: #000;
-      text-decoration: none;
-    }
-
-    .social-media a {
-      font-size: 1.5rem;
-      margin-right: 15px;
-      color: #000;
-      transition: 0.3s;
-    }
-
-    .social-media a:hover {
-      color: #555;
-    }
-
+    /* CONTACT */
     footer {
       text-align: center;
-      padding: 20px 0;
-      background-color: #f5f5f5;
-      color: #000;
-    }
-
-    @media (max-width: 768px) {
-      .about-content {
-        flex-direction: column;
-        text-align: center;
-      }
+      padding: 20px;
+      background-color: #111;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav aria-label="Main Navigation">
+  <nav>
     <ul>
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#exploring">Exploring</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#assignment">Assignment</a></li>
-      <li><a href="#pese-lab">PESE Lab</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
   <header id="hero">
-    <h1>Hi, I'm Anshika Garg</h1>
-    <p>Web Developer | AI & ML Enthusiast</p>
-    <a href="#contact" class="btn">Contact Me</a>
+    <h1>Anshika Garg</h1>
+    <p>Web Developer • AI/ML Enthusiast • Problem Solver</p>
+    <a href="#contact" class="btn">Let's Connect</a>
   </header>
 
-  <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
     <div class="about-content">
-      <img src="profile.jpg" alt="Anshika Garg Profile Picture" class="profile-img">
-      <p>I’m Anshika Garg — a forward-thinking developer who loves transforming ideas into impactful digital experiences. With a strong foundation in Web Development, Python, and Machine Learning, I create solutions that are clean, meaningful, and built with purpose. I’m driven by innovation, curiosity, and the challenge of turning complex problems into simple, elegant results. Every project I build reflects my creativity, my commitment to learning, and my passion for technology.</p>
+      <img src="profile.jpg" alt="Profile">
+      <p>I’m Anshika Garg — a forward-thinking developer driven by curiosity and innovation. I enjoy transforming ideas into meaningful digital experiences using Web Development, Python, Machine Learning, and creative problem-solving. My work reflects my passion for technology, continuous learning, and building solutions that make an impact.</p>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-list">
-      <div class="skill">
-        <span>Python</span>
-        <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
+  <!-- CURRENTLY EXPLORING SECTION -->
+  <section id="exploring">
+    <h2>Currently Exploring</h2>
+    <div class="exploring">
+
+      <div class="explore-card">
+        <h3>Deep Learning</h3>
+        <p>Neural networks, CNNs, RNNs, Transformers</p>
+        <div class="progress"><div class="progress-bar" style="width:40%"></div></div>
       </div>
-      <div class="skill">
-        <span>Machine Learning</span>
-        <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
+
+      <div class="explore-card">
+        <h3>Data Structures & Algorithms</h3>
+        <p>Graph algorithms, DP, problem-solving</p>
+        <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
       </div>
-      <div class="skill">
-        <span>Web Development</span>
-        <div class="progress"><div class="progress-bar" style="width: 95%;"></div></div>
-      </div>
-      <div class="skill">
-        <span>Data Analysis</span>
-        <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
-      </div>
+
     </div>
   </section>
 
-  <!-- PESE Lab Learnings Section -->
-  <section id="pese-lab">
-    <h2>📘 Learnings (PESE Lab)</h2>
-    <p>My daily learning summary from PESE practical lab.</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-      <!-- Day 1 -->
-      <article>
-        <h3>Day 1 (07 Jan 2026)</h3>
-        <p>In the first PESE lab, the instructor conducted self-introductions for all students and provided guidance on speaking with confidence. She also introduced herself and outlined how the PESE program aims to enhance our communication skills and overall personality development.
-      </article>
-      <!-- Day 2 -->
-      <article>
-        <h3>Day 2 (14 Jan 2026)</h3>
-        <p>The instructor explained the proper format for self-introductions, highlighting what to include and what to avoid. She also provided guidance on creating a portfolio website and shared the topic for the presentation in the next class.
-      </article>
-      <!-- Day 3 -->
-      <article>
-        <h3>Day 3 (21 Jan 2026)</h3>
-        <p>We discussed the profiling sheet questions, including career objectives, reasons for pursuing engineering, projects, achievements, failures, strengths, and areas for improvement. This exercise provided valuable insights and helped me gain a better understanding of myself.
-      </article>
-      <!-- Day 4 -->
-      <article>
-        <h3>Day 4 (28 Jan 2026)</h3>
-        <p>In today’s PESE lab, we completed the remaining questions of the profiling sheet. The instructor then introduced Unit 2 on Presentation Skills, explaining the primary and secondary objectives of a presentation, as well as the “what, why, and who” of presenting. She also shared techniques for effective content creation, which was followed by a debate activity.
-      </article>
-    </div>
-
-    <div style="margin-top: 40px;">
-      <h2>📄 Assignments</h2>
-      <p>Click below to open my PDFs (Drive links / hosted files).</p>
-      <a href="YOUR_PDF_LINK_HERE" target="_blank">Profiling Sheet PDF</a>
+  <!-- SOFT SKILLS -->
+  <section>
+    <h2>Soft Skills</h2>
+    <div class="soft-skills">
+      <div class="skill-box"><h3>Problem Solving</h3><p>Breaking down complex challenges</p></div>
+      <div class="skill-box"><h3>Communication</h3><p>Articulating technical ideas clearly</p></div>
+      <div class="skill-box"><h3>Continuous Learning</h3><p>Always curious, always improving</p></div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-card">
+      <h3>B.Tech in Computer Science Engineering</h3>
+      <p>Specialization in AI & Machine Learning</p>
+      <p>Graphic Era Hill University, Dehradun</p>
+      <p>CGPA: 8+ | 2nd Year</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>Future Goal</h3>
+      <p>Aspiring AI/ML Engineer — working to create impactful, innovative solutions for society.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
-    <div class="contact-info">
-      <p><strong>Email:</strong> <a href="mailto:garganshika850@gmail.com">garganshika850@gmail.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+919528705118">+91 9528705118</a></p>
-      <p><strong>Address:</strong> Sitarganj, Uttarakhand, India</p>
-    </div>
-
-    <div class="social-media">
-      <h3>Connect with me:</h3>
-      <a href="https://www.linkedin.com/in/anshika-garg-7036732ba" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://Anshika_Garg.github.io" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    </div>
+    <p>Email: garganshika850@gmail.com</p>
+    <p>Phone: +91 9528705118</p>
+    <p>Location: Uttarakhand, India</p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Anshika Garg. All Rights Reserved.</p>
+    <p>© 2026 Anshika Garg | All Rights Reserved</p>
   </footer>
 
 </body>
 </html>
-
-
-
 
