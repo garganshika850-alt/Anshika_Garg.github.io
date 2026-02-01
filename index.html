@@ -13,6 +13,209 @@
 
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Basic Reset & Font */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #000; /* Black text throughout */
+      background-color: #fff; /* White background */
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 15px 0;
+      background-color: #f5f5f5;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #000; /* Black links */
+      font-weight: 500;
+    }
+
+    header#hero {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #f9f9f9;
+    }
+
+    header#hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header#hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #333;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #000;
+    }
+
+    /* About Section */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-content img.profile-img {
+      width: 200px; /* Smaller size */
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .about-content p {
+      flex: 1;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #000;
+    }
+
+    /* Skills Section */
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .skill span {
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: block;
+      color: #000;
+    }
+
+    .progress {
+      background-color: #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 15px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #000;
+    }
+
+    /* Assignment Form */
+    form input[type="file"],
+    form input[type="submit"] {
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    form input[type="submit"] {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #333;
+    }
+
+    /* PESE Lab Section */
+    #pese-lab {
+      background-color: #f5f5f5;
+      color: #000;
+      padding: 50px 20px;
+    }
+
+    #pese-lab article {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      flex: 1;
+      min-width: 250px;
+    }
+
+    #pese-lab a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 20px;
+      background-color: #000;
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    /* Contact Section */
+    .contact-info p a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .social-media a {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      color: #000;
+      transition: 0.3s;
+    }
+
+    .social-media a:hover {
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #f5f5f5;
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -79,41 +282,36 @@
   </section>
 
   <!-- PESE Lab Learnings Section -->
-  <section id="pese-lab" style="padding: 50px; background-color: #121212; color: #f5f5f5; font-family: Arial, sans-serif;">
-    <h2 style="font-size: 2rem; margin-bottom: 20px;">📘 Learnings (PESE Lab)</h2>
-    <p style="margin-bottom: 40px;">My daily learning summary from PESE practical lab.</p>
-
+  <section id="pese-lab">
+    <h2>📘 Learnings (PESE Lab)</h2>
+    <p>My daily learning summary from PESE practical lab.</p>
     <div style="display: flex; flex-wrap: wrap; gap: 20px;">
       <!-- Day 1 -->
-      <article style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
-        <h3 style="margin-bottom: 10px;">Day 1 (07 Jan 2026)</h3>
+      <article>
+        <h3>Day 1 (07 Jan 2026)</h3>
         <p>In the first PESE lab, ma’am took self-introductions from students and guided us on speaking confidently. She also introduced herself and explained how PESE will improve our communication and personality.</p>
       </article>
-
       <!-- Day 2 -->
-      <article style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
-        <h3 style="margin-bottom: 10px;">Day 2 (14 Jan 2026)</h3>
+      <article>
+        <h3>Day 2 (14 Jan 2026)</h3>
         <p>Ma’am explained the correct self-introduction format, what to include and what to avoid. She also guided us on creating a portfolio website and shared the presentation topic for the next class.</p>
       </article>
-
       <!-- Day 3 -->
-      <article style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
-        <h3 style="margin-bottom: 10px;">Day 3 (21 Jan 2026)</h3>
+      <article>
+        <h3>Day 3 (21 Jan 2026)</h3>
         <p>We discussed profiling sheet questions such as career objectives, why I want to become an engineer, projects, achievements, failures, strengths, and improvement areas. It helped me understand myself better.</p>
       </article>
-
       <!-- Day 4 -->
-      <article style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
-        <h3 style="margin-bottom: 10px;">Day 4 (28 Jan 2026)</h3>
+      <article>
+        <h3>Day 4 (28 Jan 2026)</h3>
         <p>In today’s PESE lab, we completed the remaining questions of the profiling sheet. After that, ma’am started Unit 2 on Presentation Skills. She explained the primary and secondary objectives of a presentation and the “what, why, and who” of presenting. She also shared content creation techniques, followed by a debate activity.</p>
       </article>
     </div>
 
-    <!-- Assignments -->
     <div style="margin-top: 40px;">
-      <h2 style="font-size: 1.8rem; margin-bottom: 15px;">📄 Assignments</h2>
+      <h2>📄 Assignments</h2>
       <p>Click below to open my PDFs (Drive links / hosted files).</p>
-      <a href="YOUR_PDF_LINK_HERE" target="_blank" style="display: inline-block; background-color: #1f1f1f; color: #f5f5f5; padding: 15px 20px; border-radius: 10px; text-decoration: none;">Profiling Sheet PDF</a>
+      <a href="YOUR_PDF_LINK_HERE" target="_blank">Profiling Sheet PDF</a>
     </div>
   </section>
 
@@ -140,6 +338,5 @@
 
 </body>
 </html>
-
 
 
