@@ -1,258 +1,222 @@
-<!-- Revamped Portfolio HTML (Black Theme + Added Sections + More Elements) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ANSHIKA GARG | Portfolio</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <title>Portfolio — Shaanvi</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: #000;
-      color: #fff;
-      font-family: 'Roboto', sans-serif;
+      font-family: "Poppins", sans-serif;
+      background: #f4f1e8;
+      color: #333;
+      line-height: 1.6;
     }
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      padding: 15px 0;
-      background-color: #111;
-      margin: 0;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-    }
-
-    header#hero {
+    header {
+      background: #e8dfd3;
+      padding: 40px 20px;
       text-align: center;
-      padding: 80px 20px;
-      background-color: #121212;
+      border-bottom: 2px solid #d0c7bc;
     }
 
-    header#hero h1 {
-      font-size: 2.8rem;
+    header h1 {
+      font-size: 42px;
       font-weight: 700;
+      margin-bottom: 10px;
     }
 
-    header#hero p {
-      margin-top: 10px;
-      font-size: 1.3rem;
+    header p {
+      font-size: 18px;
       opacity: 0.8;
     }
 
-    .btn {
-      padding: 12px 30px;
-      background-color: #fff;
-      color: #000;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-top: 20px;
-      display: inline-block;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
     section {
-      padding: 70px 20px;
-      max-width: 1100px;
-      margin: auto;
+      padding: 60px 10%;
     }
 
-    section h2 {
+    .section-box {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      margin-bottom: 60px;
+      border: 1px solid #e7e3dc;
+    }
+
+    h2.section-title {
+      font-size: 32px;
+      margin-bottom: 20px;
       text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 40px;
-      color: #fff;
+      font-weight: 600;
+      color: #252525;
     }
 
-    /* ABOUT */
-    .about-content {
+    /* PROJECTS */
+    .project-card {
       display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-    }
-
-    .about-content img {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #fff;
-    }
-
-    .about-content p {
-      max-width: 600px;
-      line-height: 1.7;
-      font-size: 1.1rem;
-    }
-
-    /* NEW SECTION: CURRENTLY EXPLORING */
-    .exploring {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .explore-card {
-      background-color: #111;
       padding: 20px;
       border-radius: 12px;
-      width: 420px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      background: #f7f4ef;
+      margin: 16px 0;
+      border: 1px solid #dcd7ce;
     }
 
-    .explore-card h3 {
-      margin: 0 0 10px;
-    }
-
-    .progress {
-      background-color: #333;
-      height: 10px;
+    .project-status {
+      padding: 6px 14px;
       border-radius: 20px;
-      overflow: hidden;
+      font-size: 14px;
+      font-weight: 500;
     }
 
-    .progress-bar {
-      height: 100%;
-      background-color: #fff;
-      border-radius: 20px;
+    .completed { background: #d4f5d1; color: #2f7a2f; }
+    .progress { background: #ffe3c9; color: #a45a00; }
+    .planned { background: #e6e5ff; color: #4a3fb5; }
+
+    /* ACADEMIC */
+    .academic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
     }
 
-    /* SOFT SKILLS */
-    .soft-skills {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .skill-box {
-      background-color: #111;
-      padding: 25px;
-      width: 300px;
+    .card {
+      background: #faf8f4;
+      padding: 20px;
       border-radius: 12px;
-      text-align: center;
-    }
-
-    /* EDUCATION */
-    .edu-card {
-      background-color: #111;
-      padding: 30px;
-      border-radius: 12px;
-      margin-bottom: 20px;
+      border: 1px solid #dcd7ce;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
     /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #d6cfc5;
+      background: #fffefb;
+      margin-bottom: 16px;
+    }
+
+    button {
+      padding: 12px 22px;
+      background: #e58976;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: #111;
+      padding: 30px;
+      background: #e8dfd3;
+      border-top: 2px solid #d0c7bc;
       margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#exploring">Exploring</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<header>
+  <h1>Shaanvi Bisht</h1>
+  <p>AI & ML Enthusiast • Developer • Learner</p>
+</header>
 
-  <header id="hero">
-    <h1>Anshika Garg</h1>
-    <p>Web Developer • AI/ML Enthusiast • Problem Solver</p>
-    <a href="#contact" class="btn">Let's Connect</a>
-  </header>
+<!-- PROJECTS -->
+<section>
+  <div class="section-box">
+    <h2 class="section-title">Projects</h2>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <img src="profile.jpg" alt="Profile">
-      <p>I’m Anshika Garg — a forward-thinking developer driven by curiosity and innovation. I enjoy transforming ideas into meaningful digital experiences using Web Development, Python, Machine Learning, and creative problem-solving. My work reflects my passion for technology, continuous learning, and building solutions that make an impact.</p>
+    <div class="project-card">
+      <div>
+        <h3>Employee Leave Management System</h3>
+        <p>Streamlining workforce leave operations</p>
+      </div>
+      <span class="project-status completed">Completed</span>
     </div>
-  </section>
 
-  <!-- CURRENTLY EXPLORING SECTION -->
-  <section id="exploring">
-    <h2>Currently Exploring</h2>
-    <div class="exploring">
+    <div class="project-card">
+      <div>
+        <h3>Project 2</h3>
+        <p>Coming Soon</p>
+      </div>
+      <span class="project-status progress">In Progress</span>
+    </div>
 
-      <div class="explore-card">
-        <h3>Deep Learning</h3>
-        <p>Neural networks, CNNs, RNNs, Transformers</p>
-        <div class="progress"><div class="progress-bar" style="width:40%"></div></div>
+    <div class="project-card">
+      <div>
+        <h3>Project 3</h3>
+        <p>Coming Soon</p>
+      </div>
+      <span class="project-status planned">Planned</span>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMIC JOURNEY -->
+<section>
+  <div class="section-box">
+    <h2 class="section-title">Academic Journey</h2>
+
+    <div class="academic-grid">
+      <div class="card">
+        <h3>8+ CGPA</h3>
+        <p>Maintaining strong academic performance along with practical learning.</p>
       </div>
 
-      <div class="explore-card">
-        <h3>Data Structures & Algorithms</h3>
-        <p>Graph algorithms, DP, problem-solving</p>
-        <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
+      <div class="card">
+        <h3>Academic Strengths</h3>
+        <p>Core CS Concepts, AI & ML Specialization, Consistent Performance.</p>
       </div>
 
+      <div class="card">
+        <h3>Technical Interests</h3>
+        <p>Deep Learning, DS & Algo, Research-based learning.</p>
+      </div>
+
+      <div class="card">
+        <h3>Career Goal</h3>
+        <p>To build a stable and successful career with continuous learning.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SOFT SKILLS -->
-  <section>
-    <h2>Soft Skills</h2>
-    <div class="soft-skills">
-      <div class="skill-box"><h3>Problem Solving</h3><p>Breaking down complex challenges</p></div>
-      <div class="skill-box"><h3>Communication</h3><p>Articulating technical ideas clearly</p></div>
-      <div class="skill-box"><h3>Continuous Learning</h3><p>Always curious, always improving</p></div>
+<!-- CONTACT -->
+<section>
+  <div class="section-box">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-grid">
+      <div>
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <textarea placeholder="Your Message" rows="5"></textarea>
+        <button>Send Message</button>
+      </div>
+
+      <div class="card">
+        <h3>Connect</h3>
+        <p><strong>LinkedIn:</strong> Shaanvi Bisht</p>
+        <p><strong>GitHub:</strong> Shaanvi10</p>
+        <p><strong>Email:</strong> shaanvibisht10@gmail.com</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- EDUCATION -->
-  <section id="education">
-    <h2>Education</h2>
-    <div class="edu-card">
-      <h3>B.Tech in Computer Science Engineering</h3>
-      <p>Specialization in AI & Machine Learning</p>
-      <p>Graphic Era Hill University, Dehradun</p>
-      <p>CGPA: 8+ | 2nd Year</p>
-    </div>
-
-    <div class="edu-card">
-      <h3>Future Goal</h3>
-      <p>Aspiring AI/ML Engineer — working to create impactful, innovative solutions for society.</p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: garganshika850@gmail.com</p>
-    <p>Phone: +91 9528705118</p>
-    <p>Location: Uttarakhand, India</p>
-  </section>
-
-  <footer>
-    <p>© 2026 Anshika Garg | All Rights Reserved</p>
-  </footer>
+<footer>
+  <p>© 2026 Shaanvi Bisht</p>
+</footer>
 
 </body>
 </html>
-
