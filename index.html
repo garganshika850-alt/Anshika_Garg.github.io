@@ -3,219 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Shaanvi</title>
+  <title>ANSHIKA GARG | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: #f4f1e8;
-      color: #333;
-      line-height: 1.6;
-    }
+    body { margin:0; padding:0; font-family:'Roboto',sans-serif; background:#fff; color:#000; }
 
-    header {
-      background: #e8dfd3;
-      padding: 40px 20px;
-      text-align: center;
-      border-bottom: 2px solid #d0c7bc;
-    }
+    nav ul { display:flex; justify-content:center; list-style:none; padding:15px 0; background:#f5f5f5; margin:0; }
+    nav ul li { margin:0 15px; }
+    nav ul li a { text-decoration:none; color:#000; font-weight:500; }
 
-    header h1 {
-      font-size: 42px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+    header#hero { text-align:center; padding:80px 20px; background:#f9f9f9; }
+    header#hero h1 { font-size:2.5rem; margin-bottom:10px; }
+    header#hero p { font-size:1.2rem; margin-bottom:20px; }
+    .btn { display:inline-block; padding:12px 25px; background:#000; color:#fff; text-decoration:none; border-radius:8px; }
 
-    header p {
-      font-size: 18px;
-      opacity: 0.8;
-    }
+    section { padding:60px 20px; max-width:1100px; margin:auto; }
+    section h2 { text-align:center; font-size:2.2rem; margin-bottom:25px; }
 
-    section {
-      padding: 60px 10%;
-    }
+    /* About */
+    .about-content { display:flex; gap:30px; flex-wrap:wrap; align-items:center; justify-content:center; }
+    .about-content img { width:220px; height:220px; border-radius:50%; object-fit:cover; }
+    .about-content p { flex:1; font-size:1.1rem; line-height:1.7; }
 
-    .section-box {
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      margin-bottom: 60px;
-      border: 1px solid #e7e3dc;
-    }
+    /* Skills */
+    .skills-list { max-width:600px; margin:auto; display:flex; flex-direction:column; gap:20px; }
+    .progress { background:#ddd; height:15px; border-radius:8px; overflow:hidden; }
+    .progress-bar { height:100%; background:#000; }
 
-    h2.section-title {
-      font-size: 32px;
-      margin-bottom: 20px;
-      text-align: center;
-      font-weight: 600;
-      color: #252525;
-    }
+    /* PESE Lab */
+    #pese-lab { background:#fafafa; padding:50px 20px; }
+    #pese-lab article { background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
 
-    /* PROJECTS */
-    .project-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      border-radius: 12px;
-      background: #f7f4ef;
-      margin: 16px 0;
-      border: 1px solid #dcd7ce;
-    }
+    /* Contact page (full redesign you added) */
+    .contact-wrapper { display:flex; flex-wrap:wrap; gap:30px; margin-top:30px; }
+    .contact-card, .message-card { flex:1; min-width:300px; background:#fff7cc; padding:25px; border-radius:15px; box-shadow:0 3px 8px rgba(0,0,0,0.1); }
+    .message-card input, .message-card textarea { width:100%; padding:12px; margin-top:10px; border-radius:8px; border:1px solid #ccc; background:#fff8b3; }
+    .message-card button { display:flex; align-items:center; justify-content:center; width:100%; margin-top:15px; padding:12px; background:#e96b5d; border:none; border-radius:8px; color:#fff; font-size:1rem; cursor:pointer; }
+    .contact-links div { background:#fff; padding:15px; border-radius:12px; margin-bottom:15px; display:flex; align-items:center; gap:15px; }
+    .availability-box { margin-top:30px; background:#fff3a1; padding:20px; border-radius:15px; }
 
-    .project-status {
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .completed { background: #d4f5d1; color: #2f7a2f; }
-    .progress { background: #ffe3c9; color: #a45a00; }
-    .planned { background: #e6e5ff; color: #4a3fb5; }
-
-    /* ACADEMIC */
-    .academic-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-
-    .card {
-      background: #faf8f4;
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px solid #dcd7ce;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    /* CONTACT */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #d6cfc5;
-      background: #fffefb;
-      margin-bottom: 16px;
-    }
-
-    button {
-      padding: 12px 22px;
-      background: #e58976;
-      color: white;
-      border: none;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #e8dfd3;
-      border-top: 2px solid #d0c7bc;
-      margin-top: 40px;
-    }
+    footer { text-align:center; padding:20px; background:#f5f5f5; margin-top:40px; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Shaanvi Bisht</h1>
-  <p>AI & ML Enthusiast • Developer • Learner</p>
+<!-- Navigation -->
+<nav>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#pese-lab">PESE Lab</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<header id="hero">
+  <h1>Hi, I'm Anshika Garg</h1>
+  <p>Web Developer | AI & ML Enthusiast</p>
+  <a href="#contact" class="btn">Contact Me</a>
 </header>
 
-<!-- PROJECTS -->
-<section>
-  <div class="section-box">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="project-card">
-      <div>
-        <h3>Employee Leave Management System</h3>
-        <p>Streamlining workforce leave operations</p>
-      </div>
-      <span class="project-status completed">Completed</span>
-    </div>
-
-    <div class="project-card">
-      <div>
-        <h3>Project 2</h3>
-        <p>Coming Soon</p>
-      </div>
-      <span class="project-status progress">In Progress</span>
-    </div>
-
-    <div class="project-card">
-      <div>
-        <h3>Project 3</h3>
-        <p>Coming Soon</p>
-      </div>
-      <span class="project-status planned">Planned</span>
-    </div>
+<!-- About -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about-content">
+    <img src="profile.jpg" alt="Anshika Garg Profile Picture" />
+    <p>I’m Anshika Garg — a forward-thinking developer who loves transforming ideas into impactful digital experiences...</p>
   </div>
 </section>
 
-<!-- ACADEMIC JOURNEY -->
-<section>
-  <div class="section-box">
-    <h2 class="section-title">Academic Journey</h2>
-
-    <div class="academic-grid">
-      <div class="card">
-        <h3>8+ CGPA</h3>
-        <p>Maintaining strong academic performance along with practical learning.</p>
-      </div>
-
-      <div class="card">
-        <h3>Academic Strengths</h3>
-        <p>Core CS Concepts, AI & ML Specialization, Consistent Performance.</p>
-      </div>
-
-      <div class="card">
-        <h3>Technical Interests</h3>
-        <p>Deep Learning, DS & Algo, Research-based learning.</p>
-      </div>
-
-      <div class="card">
-        <h3>Career Goal</h3>
-        <p>To build a stable and successful career with continuous learning.</p>
-      </div>
-    </div>
+<!-- Skills -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-list">
+    <div class="skill"><span>Python</span><div class="progress"><div class="progress-bar" style="width:90%"></div></div></div>
+    <div class="skill"><span>Machine Learning</span><div class="progress"><div class="progress-bar" style="width:85%"></div></div></div>
+    <div class="skill"><span>Web Development</span><div class="progress"><div class="progress-bar" style="width:95%"></div></div></div>
+    <div class="skill"><span>Data Analysis</span><div class="progress"><div class="progress-bar" style="width:80%"></div></div></div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section>
-  <div class="section-box">
-    <h2 class="section-title">Contact Me</h2>
-    <div class="contact-grid">
-      <div>
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Your Email" />
-        <textarea placeholder="Your Message" rows="5"></textarea>
-        <button>Send Message</button>
-      </div>
+<!-- PESE Lab -->
+<section id="pese-lab">
+  <h2>📘 Learnings (PESE Lab)</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:20px;">
+    <article><h3>Day 1 (07 Jan 2026)</h3><p>Intro day...</p></article>
+    <article><h3>Day 2 (14 Jan 2026)</h3><p>Portfolio + presentations...</p></article>
+    <article><h3>Day 3 (21 Jan 2026)</h3><p>Profiling sheet discussion...</p></article>
+    <article><h3>Day 4 (28 Jan 2026)</h3><p>Unit 2 + debate...</p></article>
+  </div>
 
-      <div class="card">
-        <h3>Connect</h3>
-        <p><strong>LinkedIn:</strong> Shaanvi Bisht</p>
-        <p><strong>GitHub:</strong> Shaanvi10</p>
-        <p><strong>Email:</strong> shaanvibisht10@gmail.com</p>
+  <div style="margin-top:40px;">
+    <h2>📄 Assignments</h2>
+    <a href="#" target="_blank">Profiling Sheet PDF</a>
+  </div>
+</section>
+
+<!-- Contact Section (Your uploaded design) -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">Feel free to reach out for collaborations, questions, or just to say hello!</p>
+
+  <div class="contact-wrapper">
+
+    <!-- Message Form -->
+    <div class="message-card">
+      <h3>Send a Message</h3>
+      <label>Name</label>
+      <input type="text" placeholder="Your name">
+
+      <label>Email</label>
+      <input type="email" placeholder="your.email@example.com">
+
+      <label>Message</label>
+      <textarea rows="5" placeholder="Your message..."></textarea>
+
+      <button><i class="fa-regular fa-paper-plane"></i>&nbsp; Send Message</button>
+    </div>
+
+    <!-- Contact Links -->
+    <div class="contact-card">
+      <h3>Connect with Me</h3>
+      <div class="contact-links">
+        <div><i class="fa-brands fa-linkedin"></i><div><strong>LinkedIn</strong><br>Anshika Garg</div></div>
+        <div><i class="fa-brands fa-github"></i><div><strong>GitHub</strong><br>Anshika_Garg</div></div>
+        <div><i class="fa-regular fa-envelope"></i><div><strong>Email</strong><br>garganshika850@gmail.com</div></div>
       </div>
     </div>
+  </div>
+
+  <div class="availability-box">
+    <h3>📌 Available for</h3>
+    <ul>
+      <li>Internship opportunities</li>
+      <li>Collaborative projects</li>
+      <li>Learning opportunities</li>
+    </ul>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Shaanvi Bisht</p>
+  <p>&copy; 2026 Anshika Garg. All Rights Reserved.</p>
 </footer>
 
 </body>
