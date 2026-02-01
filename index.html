@@ -17,12 +17,13 @@
 <body>
 
   <!-- Navigation -->
-  <nav>
+  <nav aria-label="Main Navigation">
     <ul>
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#assignment">Assignment</a></li>
+      <li><a href="#pese-lab">PESE Lab</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -38,7 +39,7 @@
   <section id="about">
     <h2>About Me</h2>
     <div class="about-content">
-      <img src="profile.jpg" alt="Anshika Garg" class="profile-img">
+      <img src="profile.jpg" alt="Anshika Garg Profile Picture" class="profile-img">
       <p>I’m Anshika Garg — a forward-thinking developer who loves transforming ideas into impactful digital experiences. With a strong foundation in Web Development, Python, and Machine Learning, I create solutions that are clean, meaningful, and built with purpose. I’m driven by innovation, curiosity, and the challenge of turning complex problems into simple, elegant results. Every project I build reflects my creativity, my commitment to learning, and my passion for technology.</p>
     </div>
   </section>
@@ -70,64 +71,65 @@
   <section id="assignment">
     <h2>Upload Assignment</h2>
     <p>Submit your assignment directly here:</p>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="upload.php" method="post" enctype="multipart/form-data">
       <label for="assignment-file">Choose file:</label><br>
       <input type="file" id="assignment-file" name="assignment-file" required><br><br>
       <input type="submit" value="Upload" class="btn">
     </form>
   </section>
-<!-- PESE Lab Learnings Section -->
-<section id="pese-lab" style="padding: 50px; background-color: #121212; color: #f5f5f5; font-family: Arial, sans-serif;">
-  <h2 style="font-size: 2rem; margin-bottom: 20px;">📘 Learnings (PESE Lab)</h2>
-  <p style="margin-bottom: 40px;">My daily learning summary from PESE practical lab.</p>
 
-  <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-    <!-- Day 1 -->
-    <div style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 10px;">Day 1 (07 Jan 2026)</h3>
-      <p>In the first PESE lab, ma’am took self-introductions from students and guided us on speaking confidently. She also introduced herself and explained how PESE will improve our communication and personality.</p>
+  <!-- PESE Lab Learnings Section -->
+  <section id="pese-lab" style="padding: 50px; background-color: #121212; color: #f5f5f5; font-family: Arial, sans-serif;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">📘 Learnings (PESE Lab)</h2>
+    <p style="margin-bottom: 40px;">My daily learning summary from PESE practical lab.</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <!-- Day 1 -->
+      <article style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
+        <h3 style="margin-bottom: 10px;">Day 1 (07 Jan 2026)</h3>
+        <p>In the first PESE lab, ma’am took self-introductions from students and guided us on speaking confidently. She also introduced herself and explained how PESE will improve our communication and personality.</p>
+      </article>
+
+      <!-- Day 2 -->
+      <article style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
+        <h3 style="margin-bottom: 10px;">Day 2 (14 Jan 2026)</h3>
+        <p>Ma’am explained the correct self-introduction format, what to include and what to avoid. She also guided us on creating a portfolio website and shared the presentation topic for the next class.</p>
+      </article>
+
+      <!-- Day 3 -->
+      <article style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
+        <h3 style="margin-bottom: 10px;">Day 3 (21 Jan 2026)</h3>
+        <p>We discussed profiling sheet questions such as career objectives, why I want to become an engineer, projects, achievements, failures, strengths, and improvement areas. It helped me understand myself better.</p>
+      </article>
+
+      <!-- Day 4 -->
+      <article style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
+        <h3 style="margin-bottom: 10px;">Day 4 (28 Jan 2026)</h3>
+        <p>In today’s PESE lab, we completed the remaining questions of the profiling sheet. After that, ma’am started Unit 2 on Presentation Skills. She explained the primary and secondary objectives of a presentation and the “what, why, and who” of presenting. She also shared content creation techniques, followed by a debate activity.</p>
+      </article>
     </div>
 
-    <!-- Day 2 -->
-    <div style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 10px;">Day 2 (14 Jan 2026)</h3>
-      <p>Ma’am explained the correct self-introduction format, what to include and what to avoid. She also guided us on creating a portfolio website and shared the presentation topic for the next class.</p>
+    <!-- Assignments -->
+    <div style="margin-top: 40px;">
+      <h2 style="font-size: 1.8rem; margin-bottom: 15px;">📄 Assignments</h2>
+      <p>Click below to open my PDFs (Drive links / hosted files).</p>
+      <a href="YOUR_PDF_LINK_HERE" target="_blank" style="display: inline-block; background-color: #1f1f1f; color: #f5f5f5; padding: 15px 20px; border-radius: 10px; text-decoration: none;">Profiling Sheet PDF</a>
     </div>
-
-    <!-- Day 3 -->
-    <div style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 10px;">Day 3 (21 Jan 2026)</h3>
-      <p>We discussed profiling sheet questions such as career objectives, why I want to become an engineer, projects, achievements, failures, strengths, and improvement areas. It helped me understand myself better.</p>
-    </div>
-
-    <!-- Day 4 -->
-    <div style="background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 10px;">Day 4 (28 Jan 2026)</h3>
-      <p>In today’s PESE lab, we completed the remaining questions of the profiling sheet. After that, ma’am started Unit 2 on Presentation Skills. She explained the primary and secondary objectives of a presentation and the “what, why, and who” of presenting. She also shared content creation techniques, followed by a debate activity.</p>
-    </div>
-  </div>
-
-  <!-- Assignments -->
-  <div style="margin-top: 40px;">
-    <h2 style="font-size: 1.8rem; margin-bottom: 15px;">📄 Assignments</h2>
-    <p>Click below to open my PDFs (Drive links / hosted files).</p>
-    <a href="YOUR_PDF_LINK_HERE" target="_blank" style="display: inline-block; background-color: #1f1f1f; color: #f5f5f5; padding: 15px 20px; border-radius: 10px; text-decoration: none;">Profiling Sheet PDF</a>
-  </div>
-</section>
+  </section>
 
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact</h2>
     <div class="contact-info">
-      <p><strong>Email:</strong> garganshika850@gmail.com</p>
-      <p><strong>Phone:</strong> +91 9528705118</p>
+      <p><strong>Email:</strong> <a href="mailto:garganshika850@gmail.com">garganshika850@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+919528705118">+91 9528705118</a></p>
       <p><strong>Address:</strong> Sitarganj, Uttarakhand, India</p>
     </div>
 
     <div class="social-media">
       <h3>Connect with me:</h3>
-      <a href="https://www.linkedin.com/in/anshika-garg-7036732ba" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://Anshika_Garg.github.io" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/anshika-garg-7036732ba" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://Anshika_Garg.github.io" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
     </div>
   </section>
 
