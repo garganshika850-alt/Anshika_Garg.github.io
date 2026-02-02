@@ -135,18 +135,25 @@
     .certificate-card:hover { transform: scale(1.05); }
 
     /* ASSIGNMENTS */
-    input[type="file"], input[type="submit"] {
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: none;
-      font-weight: bold;
-    }
+ <section id="assignments">
+  <h2>Assignments</h2>
+  <div class="section-box">
+    <p>You can upload your assignment PDF here:</p>
+    <form id="assignment-form" enctype="multipart/form-data">
+      <input type="file" name="assignment" accept=".pdf" required>
+      <input type="submit" value="Upload PDF">
+    </form>
 
-    input[type="submit"] { background-color: #ffbb00; color:#000; cursor:pointer; transition:0.3s; }
-    input[type="submit"]:hover { background-color:#ffdd55; }
-
-    ul#uploaded-list li { margin-top: 8px; }
+    <h3 style="margin-top:20px;">Uploaded Assignments</h3>
+    <ul id="uploaded-list">
+      <li>
+        <a href="Anshika_Garg_ML-3_12.pdf" target="_blank">
+          Anshika_Garg_ML-3_12.pdf
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
 
     /* CONTACT */
     .social-media a {
@@ -350,4 +357,5 @@
 </script>
 </body>
 </html>
+
 
